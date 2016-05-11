@@ -1,6 +1,6 @@
 package main.java.vutichenko.play;
 
-import main.java.vutichenko.play.OnFaceWriters.ConsoleOnFace;
+import main.java.vutichenko.play.onface.ConsoleOnFace;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -13,5 +13,6 @@ public class Playground {
 
         ConsoleOnFace consoleWriter = context.getBean(ConsoleOnFace.class);
         consoleWriter.writeOnFace();
+        System.out.println(consoleWriter.getTimes());
     }
 }

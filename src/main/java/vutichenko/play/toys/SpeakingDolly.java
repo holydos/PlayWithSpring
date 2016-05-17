@@ -1,11 +1,13 @@
-package main.java.vutichenko.play.onface;
+package main.java.vutichenko.play.toys;
 
+import main.java.vutichenko.play.annots.Juxtapose;
 import main.java.vutichenko.play.annots.RandomInt;
 
 /**
  * Created by vutichenko on 11.05.2016.
  */
-public class ConsoleOnFace {
+@Juxtapose(jux = JackInBox.class)
+public class SpeakingDolly implements Toy {
     private String somethingToWrite;
 
     @RandomInt(min=2,max=10)

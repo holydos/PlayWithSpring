@@ -6,9 +6,10 @@
 
        <context:annotation-config/>
 
+       <bean class="main.java.vutichenko.play.processors.JuxtaposeBeanFactoryPostProcessor"/>
        <bean class="main.java.vutichenko.play.processors.RandomIntAnnotationPostProcessor"/>
 
-       <bean class="main.java.vutichenko.play.onface.ConsoleOnFace" name="consoleOnFace">
+       <bean class="main.java.vutichenko.play.toys.SpeakingDolly" name="dolly">
               <property name="somethingToWrite" value="Play this game more"/>
        </bean>
 

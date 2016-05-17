@@ -4,10 +4,8 @@ import main.java.vutichenko.play.annots.RandomInt;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.util.ReflectionUtils;
-import sun.plugin.javascript.ReflectUtil;
 
 import java.lang.reflect.Field;
-import java.util.Random;
 
 /**
  * Created by vutichenko on 11.05.2016.

@@ -12,9 +12,8 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class Playground {
     public static void main(String[] args) {
         ApplicationContext context = new ClassPathXmlApplicationContext("/spring-config.xml");
-
         Toy toy = context.getBean("dolly", Toy.class);
+        for (int i=0;i<toy.getTimes();i++)
         toy.writeOnFace();
-        System.out.println(toy.getTimes());
     }
 }

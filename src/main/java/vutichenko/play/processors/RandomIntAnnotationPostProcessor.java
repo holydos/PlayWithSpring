@@ -16,9 +16,10 @@ public class RandomIntAnnotationPostProcessor implements BeanPostProcessor {
         for (Field field : fields) {
             if(field.getAnnotation(RandomInt.class)!=null){
                 final int max = field.getAnnotation(RandomInt.class).max();
-                final int min = field.getAnnotation(RandomInt.class).min();
                 field.setAccessible(true);
-                ReflectionUtils.setField(field,o,max-min);
+                int value = (int) (Math.random() * max);
+
+                ReflectionUtils.setField(field,o, value);
             }
         }
         return o;

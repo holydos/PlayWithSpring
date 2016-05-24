@@ -8,6 +8,5 @@ import java.lang.annotation.*;
 
 @Retention(RetentionPolicy.RUNTIME)
 public @interface RandomInt {
-    int min();
     int max();
 }

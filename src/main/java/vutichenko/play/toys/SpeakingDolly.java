@@ -1,16 +1,15 @@
 package main.java.vutichenko.play.toys;
 
-import main.java.vutichenko.play.annots.Juxtapose;
 import main.java.vutichenko.play.annots.RandomInt;
 
 /**
  * Created by vutichenko on 11.05.2016.
  */
-@Juxtapose(jux = JackInBox.class)
+//@Juxtapose(jux = JackInBox.class)
 public class SpeakingDolly implements Toy {
     private String somethingToWrite;
 
-    @RandomInt(min=2,max=10)
+    @RandomInt(max=10)
     private int times;
 
     public int getTimes() {

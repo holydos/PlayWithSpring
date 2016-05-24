@@ -2,15 +2,24 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
 
-       <context:annotation-config/>
+    <context:annotation-config/>
 
-       <bean class="main.java.vutichenko.play.processors.JuxtaposeBeanFactoryPostProcessor"/>
-       <bean class="main.java.vutichenko.play.processors.RandomIntAnnotationPostProcessor"/>
+    <bean class="main.java.vutichenko.play.processors.JuxtaposeAnnotationBeanFactoryPostProcessor"/>
+    <bean class="main.java.vutichenko.play.processors.RandomIntAnnotationPostProcessor"/>
 
-       <bean class="main.java.vutichenko.play.toys.SpeakingDolly" name="dolly">
-              <property name="somethingToWrite" value="Play this game more"/>
-       </bean>
-
+    <bean class="main.java.vutichenko.play.toys.SpeakingDolly" name="dolly">
+        <property name="somethingToWrite" value="Play this game more"/>
+    </bean>
+    <bean id="simonAspect" class="main.java.vutichenko.play.actors.SimonAspect"/>
+    <aop:config>
+        <aop:aspect id="simon" ref="simonAspect">
+            <aop:after method="sayAfter"
+                       pointcut="execution(* main.java.vutichenko.play.toys.SpeakingDolly.writeOnFace())"/>
+            <aop:around method="sayAround"
+                        pointcut="execution(* main.java.vutichenko.play.toys.JackInBox.writeOnFace())"/>
+        </aop:aspect>
+    </aop:config>
 </beans>

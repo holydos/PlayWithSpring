@@ -6,7 +6,7 @@ import main.java.vutichenko.play.annots.RandomInt;
 /**
  * Created by vutichenko on 11.05.2016.
  */
-@Juxtapose(jux = JackInBox.class)
+//@Juxtapose(jux = JackInBox.class)
 public class SpeakingDolly implements Toy {
     private String somethingToWrite;
 

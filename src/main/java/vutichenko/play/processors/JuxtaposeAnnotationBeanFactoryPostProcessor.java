@@ -6,12 +6,10 @@ import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.beans.factory.config.BeanFactoryPostProcessor;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 
-import java.util.Iterator;
-
 /**
  * Created by vutichenko on 17.05.2016.
  */
-public class JuxtaposeBeanFactoryPostProcessor implements BeanFactoryPostProcessor {
+public class JuxtaposeAnnotationBeanFactoryPostProcessor implements BeanFactoryPostProcessor {
     public void postProcessBeanFactory(ConfigurableListableBeanFactory configurableListableBeanFactory) throws BeansException {
         final String[] beanDefinitionNames = configurableListableBeanFactory.getBeanDefinitionNames();
         for(String name:beanDefinitionNames){
